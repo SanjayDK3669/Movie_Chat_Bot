@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: Movie_chat_bot
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install --prefer-binary -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
