@@ -1,11 +1,9 @@
 services:
   - type: web
-    name: Movie_chat_bot
-    env: python
-    buildCommand: |
-      pip install --upgrade pip
-      pip install --prefer-binary -r requirements.txt
-    startCommand: python app.py
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.9
+    name: Movie_chat_app  # Change this to your app name
+    env: docker
+    plan: free
+    repo: https://github.com/SanjayDK3669/Movie_Chat_Bot.git
+    branch: main
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
